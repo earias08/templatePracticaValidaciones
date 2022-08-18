@@ -1,5 +1,5 @@
 import Persona from './classPersona.js';
-import {cantidadCaracteres} from './helpers.js';
+import {cantidadCaracteres, validarAltura, validarDNI, validarEdad} from './helpers.js';
 
 let nombre = document.getElementById("nombre");
 let edad = document.getElementById("edad");
@@ -16,7 +16,9 @@ let btnmostrarGeneracion = document.querySelector("#mostrarGeneracion");
 //aqui voy agregando los eventos
 formulario.addEventListener("submit", crearPersona);
 nombre.addEventListener('blur', ()=>{cantidadCaracteres(nombre)});
-
+edad.addEventListener('blur',()=>{validarEdad(edad)});
+dni.addEventListener('blur',()=>{validarDNI(dni)});
+altura.addEventListener('blur',()=>{validarAltura(altura)})
 
 function crearPersona(e) {
   e.preventDefault();
